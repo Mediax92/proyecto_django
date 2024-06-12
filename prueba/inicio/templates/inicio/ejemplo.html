@@ -51,27 +51,19 @@
 
 <body>
 
+	
+
  	<div class="page-container">
+
+
 		<!-- Barra de menú -->
 		<div class="sidebar">
-            <div class="user-menu dropdown">
-
-                <a href="#">
-                    <img src="{%block imagen%}
-                    {% load static%}
-                    {%static 'inicio/images/home.png'%}
-                    {%endblock imagen%}">
-                    <div class="user-info">
-                    {% block tituloM %}{% endblock tituloM %} <span>DSM</span>
-            </div>
-        </a>
-    </div>
 			<div class="sidebar-content">
 				<!-- Menú de navegación -->
 				<ul class="navigation">
-							<li><a href="{%url 'Principal'%}">Principal</a></li>
-							<li><a href="{%url 'Formulario'%}">Formulario</a></li>
-                            <li><a href="{%url 'Contacto'%}">Contacto</a></li>
+							<li><a href="{%url 'principal.html'%}">Principal</a></li>
+							<li><a href="{%url 'formulario.html'%}">Formulario</a></li>
+                            <li><a href="{%url 'contacto.html'%}">Contacto</a></li>
 				</ul>
 				<!-- /Fin menú -->
 			</div>
@@ -80,35 +72,10 @@
 
 
 		<!-- Contenido Principal-->
-        <div class="page-content">
-            {% block encabezado %}
-            
-            {% endblock encabezado %}
-            <div class="breadcrumb-line">
-                <ul class="breadcrumb">
-        
-                            <a href="{%url 'Principal'%}">
-                            {%if request.path == '/' %}
-                                    Principal
-                            {%else%}
-                                Principal{{request.path}}
-                            {%endif%}
-                            </a>
-        
-                        </ul>
-                    </div>
-                    
-        <!-- Barra de navegación-->
-		<!-- /Contenido Principal-->
-             {% block contenido%}
- 
+        {% block contenido %}<!--Template Tag-->
         <!--block sirve para indicar que colocaremos un bloque de contenido a traves de nuestra variable content -->
-            {% endblock %} 
-
-       
-     
-
-<!--Contenido-->
-            </div>
+        {% endblock %}
+		<!-- /Contenido Principal-->
+	</div>
 </body>
 </html>

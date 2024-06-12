@@ -1,4 +1,27 @@
 {% extends "inicio/encabezado.html" %}
-{% block titulo%}
-Home
+{% block titulo%}PRINCIPAL {% endblock %}
+
+
+{% block imagen %}
+{% load static %}
+{% static 'inicio/images/home.png' %}
+{%endblock imagen %}
+
+{% block tituloM %}
+Principal
+{% endblock tituloM%}
+
+{% block encabezado %}
+<!--Encabezdo -->
+<div class="page-header">
+    <div class="page-title">
+        <h3>Alumnos
+        <small>Lista de Alumnos </small></h3>
+    </div>
+</div>
+{% endblock encabezado %}
+<!-- /Encabezado-->
+{% block contenido %}
+<!--Contenido Principal-->
+    
 {% endblock%}
